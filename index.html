@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Web Proxy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>My Proxy</h1>
+    <p>Access your favorite websites anonymously and securely.</p>
+    <form id="proxyForm">
+      <input type="text" id="urlInput" placeholder="Enter a website URL" required />
+      <button type="submit">Go</button>
+    </form>
+    <p class="note">For example: https://example.com</p>
+  </div>
+
+  <script>
+    document.getElementById('proxyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const url = document.getElementById('urlInput').value.trim();
+      if (url) {
+        // Example: Redirect to your proxy with the URL as a query param
+        window.location.href = `https://your-proxy.replit.app/service/${encodeURIComponent(url)}`;
+      }
+    });
+  </script>
+</body>
+</html>
